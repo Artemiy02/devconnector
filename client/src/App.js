@@ -12,6 +12,8 @@ import Footer from './components/layout/Footer';
 import Landing from './components/layout/Landing';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
+import { logoutUser } from './actions/authActions';
+
 
 import './App.css';
 
@@ -23,6 +25,17 @@ if (localStorage.jwtToken) {
   const decoded = jwt_decode(localStorage.jwtToken);
   // Set user and isAuthenticated
   store.dispatch(setCurrentUser(decoded));
+
+  // Check for expired token
+  const currentTime = Date.now() / 1000;
+  if (decoded.exp < currentTime) {
+    // Logout user
+    store.dispatch(logoutUser());
+    // TODO: Clear current Profile
+    
+    // Redirect to login page
+    window.location.href = '/login';
+  }
 }
 
 
