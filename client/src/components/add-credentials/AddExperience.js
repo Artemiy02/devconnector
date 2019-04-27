@@ -75,7 +75,7 @@ class AddExperience extends Component {
               <small className="d-block pb-3">* = requried field</small>
               <form onSubmit={this.onSubmit}>
                 <TextFieldGroup
-                  placeholder="Company"
+                  placeholder="* Company"
                   name="company"
                   value={this.state.company}
                   onChange={this.onChange}
