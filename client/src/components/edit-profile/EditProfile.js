@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import TextFieldGroup from '../common/TextFieldGroup';
 import TextAreaFieldGroup from '../common/TextAreaFieldGroup';
 import InputGroup from '../common/InputGroup';
@@ -162,7 +162,7 @@ class EditProfile extends Component {
 
     //Select options for status
     const options = [
-      { label: '* Select Professional Status', value: 0 },
+      { label: '* Select Professional Status', value: 0},
       { label: 'Developer', value: 'Developer' },
       { label: 'Junior Developer', value: 'Junior Developer' },
       { label: 'Senior Developer', value: 'Senior Developer' },
@@ -178,6 +178,9 @@ class EditProfile extends Component {
       <div className="container">
         <div className="row">
           <div className="col-md-8 m-auto">
+            <Link to='/dashboard' className='btn btn-light'>
+              Go Back
+            </Link>
             <h1 className="display-4 text-center">Edit Profile</h1>
             <small className="d-block pb-3">* = required fields</small>
             <form onSubmit={this.onSubmit}>
@@ -258,7 +261,7 @@ class EditProfile extends Component {
                 >
                   Add Social Network Links
                 </button>
-                <span className="text-muted">Optional</span>
+                <span className="text-muted"> Optional</span>
               </div>
               {socialInputs}
               <input type="submit" value="Submit" className="btn btn-info btn-block mt-4"/>

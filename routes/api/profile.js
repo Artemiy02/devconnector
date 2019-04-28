@@ -123,7 +123,7 @@ router.post(
     if(req.body.website) profileFields.website = req.body.website;
     if(req.body.location) profileFields.location = req.body.location;
     if(req.body.bio) profileFields.bio = req.body.bio;
-    if(req.body.status) profileFields.status = req.body.status;
+    if(req.body.status && req.body.status !== 0) profileFields.status = req.body.status;
     if(req.body.githubusername) profileFields.githubusername = req.body.githubusername;
     // Skills - Split into array
     if(typeof req.body.skills !== 'undefined') {
@@ -267,7 +267,7 @@ router.delete(
     // Get remove index
     const removeIndex = profile.education
       .map(item => item.id)
-      .indexOf(req.params.exp_id);
+      .indexOf(req.params.edu_id);
 
     // Splice oup of array
     profile.education.splice(removeIndex, 1);

@@ -120,7 +120,7 @@ class CreateProfile extends Component {
 
     //Select options for status
     const options = [
-      { label: '* Select Professional Status', value: 0 },
+      { label: '* Select Professional Status', value: 0},
       { label: 'Developer', value: 'Developer' },
       { label: 'Junior Developer', value: 'Junior Developer' },
       { label: 'Senior Developer', value: 'Senior Developer' },
@@ -219,7 +219,7 @@ class CreateProfile extends Component {
                 >
                   Add Social Network Links
                 </button>
-                <span className="text-muted">Optional</span>
+                <span className="text-muted"> Optional</span>
               </div>
               {socialInputs}
               <input type="submit" value="Submit" className="btn btn-info btn-block mt-4"/>
