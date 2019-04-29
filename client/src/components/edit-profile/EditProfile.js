@@ -57,11 +57,21 @@ class EditProfile extends Component {
       profile.githubusername = !isEmpty(profile.githubusername) ? profile.githubusername : '';
       profile.bio = !isEmpty(profile.bio) ? profile.bio : '';
       profile.social = !isEmpty(profile.social) ? profile.social : {};
-      profile.social.twitter = !isEmpty(profile.social.twitter) ? profile.social.twitter : '';
-      profile.social.facebook = !isEmpty(profile.social.facebook) ? profile.social.facebook : '';
-      profile.social.linkedin = !isEmpty(profile.social.linkedin) ? profile.social.linkedin : '';
-      profile.social.youtube = !isEmpty(profile.social.youtube) ? profile.social.youtube : '';
-      profile.social.instagram = !isEmpty(profile.social.instagram) ? profile.social.instagram : '';
+      profile.social.twitter = !isEmpty(profile.social.twitter)
+      ? profile.social.twitter
+      : '';
+      profile.social.facebook = !isEmpty(profile.social.facebook)
+      ? profile.social.facebook
+      : '';
+      profile.social.linkedin = !isEmpty(profile.social.linkedin)
+      ? profile.social.linkedin
+      : '';
+      profile.social.youtube = !isEmpty(profile.social.youtube)
+      ? profile.social.youtube
+      : '';
+      profile.social.instagram = !isEmpty(profile.social.instagram)
+      ? profile.social.instagram
+      : '';
 
       // Set component field state
       this.setState({
@@ -73,11 +83,11 @@ class EditProfile extends Component {
         skills: skillsCSV,
         githubusername: profile.githubusername,
         bio: profile.bio,
-        twitter: profile.twitter,
-        facebook: profile.facebook,
-        linkedin: profile.linkedin,
-        youtube: profile.youtube,
-        instagram: profile.instagram
+        twitter: profile.social.twitter,
+        facebook: profile.social.facebook,
+        linkedin: profile.social.linkedin,
+        youtube: profile.social.youtube,
+        instagram: profile.social.instagram
       })
     }
   }
