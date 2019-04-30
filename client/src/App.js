@@ -24,6 +24,7 @@ import AddExperience from './components/add-credentials/AddExperience';
 import AddEducation from './components/add-credentials/AddEducation';
 import Profiles from './components/profiles/Profiles';
 import Profile from './components/profile/Profile';
+import Posts from './components/posts/Posts';
 import NotFound from './components/not-found/NotFound';
 
 
@@ -33,7 +34,7 @@ import './App.css';
 if (localStorage.jwtToken) {
   // Set auth token header auth
   setAuthToken(localStorage.jwtToken);
-  // Decode token and get user info and exp 
+  // Decode token and get user info and exp
   const decoded = jwt_decode(localStorage.jwtToken);
   // Set user and isAuthenticated
   store.dispatch(setCurrentUser(decoded));
@@ -93,6 +94,12 @@ class App extends Component {
                  exact
                  path="/add-education"
                  component={ AddEducation } />
+             </Switch>
+             <Switch>
+               <PrivateRoute
+                 exact
+                 path="/feed"
+                 component={ Posts } />
              </Switch>
              <Route exact path="/not-found" component={ NotFound } />
            </div>
