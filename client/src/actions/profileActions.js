@@ -9,6 +9,13 @@ import {
   SET_CURRENT_USER
 } from './types';
 
+// Profile loading
+export const setProfileLoading = () => {
+  return {
+    type: PROFILE_LOADING
+  }
+}
+
 // Get current profile
 export const getCurrentProfile = () => dispatch => {
   dispatch(setProfileLoading());
@@ -45,13 +52,6 @@ export const getProfileByHandle = handle => dispatch => {
         payload: null
       })
     );
-}
-
-// Profile loading
-export const setProfileLoading = () => {
-  return {
-    type: PROFILE_LOADING
-  }
 }
 
 // Clear profile

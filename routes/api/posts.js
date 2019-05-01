@@ -33,7 +33,7 @@ router.get('/', (req, res) =>{
 router.get('/:post_id', (req, res) =>{
   Post.findById(req.params.post_id)
     .then(post => {
-      if (!post) return res.json({ postnotfoud: 'Post not found' });
+      if (!post) return res.json({ postnotfound: 'Post not found' });
       res.json(post);
     })
     .catch(err =>
@@ -80,7 +80,7 @@ router.delete(
           // Delete
           post.remove().then(() => res.json({ success: true }));
         })
-        .catch(err => res.status(404).json({ postnotfoud: 'Post not found' }));
+        .catch(err => res.status(404).json({ postnotfound: 'Post not found' }));
     });
 });
 
@@ -103,7 +103,7 @@ router.post(
 
           post.save().then(post => res.json(post));
         })
-        .catch(err => res.status(404).json({ postnotfoud: 'Post not found' }));
+        .catch(err => res.status(404).json({ postnotfound: 'Post not found' }));
     });
 });
 
@@ -132,7 +132,7 @@ router.post(
           // Save
           post.save().then(post => res.json(post));
         })
-        .catch(err => res.status(404).json({ postnotfoud: 'Post not found' }));
+        .catch(err => res.status(404).json({ postnotfound: 'Post not found' }));
     });
 });
 
