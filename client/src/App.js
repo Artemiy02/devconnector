@@ -30,7 +30,6 @@ import NotFound from './components/not-found/NotFound';
 
 
 import './App.css';
-console.log(store);
 
 // Check for Token
 if (localStorage.jwtToken) {
